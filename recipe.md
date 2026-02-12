@@ -18,29 +18,32 @@ _Include the initializer, public properties, and public methods with all paramet
 ```python
 # EXAMPLE
 
-class Reminder:
+class Playlist():
+    tracks_dict = {}
     # User-facing properties:
     #   name: string
 
-    def __init__(self, name):
+    def __init__(self):
         # Parameters:
         #   name: string
         # Side effects:
         #   Sets the name property of the self object
         pass # No code here yet
 
-    def remind_me_to(self, task):
+    def add(self, title, artist):
         # Parameters:
-        #   task: string representing a single task
+        #   task: two string representing a title and artist
         # Returns:
-        #   Nothing
+        #   return a string which says: "You added {title} created by {artist} into your playlist."
         # Side-effects
-        #   Saves the task to the self object
+        #   moving title and artist into our dictionary
+        #.  throws an typeerror if music is duplicated
         pass # No code here yet
 
-    def remind(self):
+    def list_of_tracks(self):
         # Returns:
-        #   A string reminding the user to do the task
+        #   Return the updated dictionary with the titles and artists
+        # extra: if we want we can put a time and date on the returns
         # Side-effects:
         #   Throws an exception if no task is set
         pass # No code here yet
@@ -54,22 +57,24 @@ _Make a list of examples of how the class will behave in different situations._
 # EXAMPLE
 
 """
-Given a name and a task
-#remind reminds the user to do the task
+Given a song title and artist
+Title and artist added to our list
+
 """
-reminder = Reminder("Kay")
+playlist = Playlist()
 reminder.remind_me_to("Walk the dog")
 reminder.remind() # => "Walk the dog, Kay!"
 
 """
-Given a name and no task
-#remind raises an exception
+Given a song title and artist
+#"You added {title} created by {artist} into your playlist."
+Throw a Typeerror if song is duplicated
 """
-reminder = Reminder("Kay")
-reminder.remind() # raises an error with the message "No task set."
+test_add = Playlist.add("Umbrella" "Rhianna")
+reminder.remind()
 
 """
-Given a name and an empty task
+Given a song title and artist
 #remind still reminds the user to do the task, even though it looks odd
 """
 reminder = Reminder("Kay")
