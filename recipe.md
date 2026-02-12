@@ -19,33 +19,28 @@ _Include the initializer, public properties, and public methods with all paramet
 # EXAMPLE
 
 class Playlist():
-    tracks_dict = {}
     # User-facing properties:
     #   name: string
 
     def __init__(self):
-        # Parameters:
+        self.tracks = []
+        # Parameters: none
         #   name: string
         # Side effects:
         #   Sets the name property of the self object
         pass # No code here yet
 
-    def add(self, title, artist):
-        # Parameters:
-        #   task: two string representing a title and artist
-        # Returns:
-        #   return a string which says: "You added {title} created by {artist} into your playlist."
+    def add(self, song):
+        # Parameters: string detailing the song
+        # Returns: nothing 
         # Side-effects
-        #   moving title and artist into our dictionary
-        #.  throws an typeerror if music is duplicated
+        #   the string detailing the song added to list tracks[]
         pass # No code here yet
 
     def list_of_tracks(self):
-        # Returns:
-        #   Return the updated dictionary with the titles and artists
-        # extra: if we want we can put a time and date on the returns
+        # Returns: the list of songs added. 
         # Side-effects:
-        #   Throws an exception if no task is set
+        #   Throws an exception if list is empty
         pass # No code here yet
 ```
 

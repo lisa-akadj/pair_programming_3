@@ -1,5 +1,15 @@
 class Playlist():
+   
     def __init__(self):
-        track_dict = {}
-    def add(self, title, artist):
-        pass
+     self.tracks = []
+
+    def add(self, song):
+       self.song = song 
+       self.tracks.append(song)
+       
+
+    def list_of_tracks(self):
+       return self.tracks
+         
+      
+    
