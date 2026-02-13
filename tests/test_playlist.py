@@ -9,6 +9,10 @@ def test_add_song():
 def test_typerror_in_list_empty():
     playlist = Playlist()
     with pytest.raises(TypeError):
-        playlist.add()
-    assert playlist.list_of_tracks == "Playlist is empty"
+        playlist.list_of_tracks()
         
+def test_when_list_is_not_empty():
+    playlist = Playlist()
+    playlist.add("Umbrella by Rihanna")
+    result = playlist.tracks
+    assert result == ["Umbrella by Rihanna"]
